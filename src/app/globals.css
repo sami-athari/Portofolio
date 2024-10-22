@@ -20,8 +20,39 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+/* globals.css or custom CSS file */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes reverse-scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Use Tailwind plugin to add custom animation classes */
+.animated-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.reverse-animated-scroll {
+  animation: reverse-scroll 20s linear infinite;
 }
