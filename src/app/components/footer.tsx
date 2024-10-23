@@ -1,4 +1,4 @@
-import Link from 'next/link';
+
 import { FaYoutube, FaGithub, FaInstagram } from 'react-icons/fa';
 const Footer = () => {
   return (
@@ -9,30 +9,6 @@ const Footer = () => {
           <div className="text-lg font-semibold">
             © {new Date().getFullYear()} Sami Athari Z.
           </div>
-
-          {/* Navigation Links */}
-          <ul className="flex flex-wrap space-x-6 my-4 md:my-0">
-            <li>
-              <Link href="/" className="hover:text-pink-400 transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="#about" className="hover:text-pink-400 transition">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="#portfolio" className="hover:text-pink-400 transition">
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" className="hover:text-pink-400 transition">
-                Contact
-              </Link>
-            </li>
-          </ul>
 
           {/* Social Media Icons */}
           <div className="mt-4 flex justify-center lg:justify-start space-x-8 text-3xl">

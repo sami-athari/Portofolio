@@ -17,35 +17,35 @@ const skillsData = [
 
 const SkillSection = () => {
   return (
-    <div id="skills" className="h-screen flex flex-col items-center justify-center bg-transparent text-white">
-      <h1 className="text-4xl font-bold mb-10">Skills</h1>
+    <div id="skills" className="min-h-screen flex flex-col items-center justify-center bg-transparent text-white px-4 md:px-8">
+      <h1 className="text-3xl md:text-4xl font-bold mb-10">Skills</h1>
       
       {/* Skills Icons in rows */}
-      <div className="flex flex-wrap justify-center gap-6 mb-16 max-w-4xl">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 mb-16 max-w-4xl">
         {skillsData.map((skill, index) => (
           <div key={index} className="flex flex-col items-center">
             <Image src={skill.image} alt={skill.name} width={skill.width} height={skill.height} />
-            <p className="text-sm mt-2">{skill.name}</p>
+            <p className="text-xs sm:text-sm mt-2">{skill.name}</p>
           </div>
         ))}
       </div>
 
       {/* Skills Description */}
-      <div className="flex justify-center gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
         {/* Graphic Design */}
-        <div className="text-center p-4 rounded-md">
-          <h3 className="font-semibold text-lg">Graphic Design</h3>
-          <p className="text-sm text-gray-400">Design logos, posters, and more.</p>
+        <div className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition">
+          <h3 className="font-semibold text-base sm:text-lg">Graphic Design</h3>
+          <p className="text-xs sm:text-sm text-gray-400">Design logos, posters, and more.</p>
         </div>
         {/* UI UX Design */}
-        <div className="text-center p-4 rounded-md">
-          <h3 className="font-semibold text-lg">UI/UX Design</h3>
-          <p className="text-sm text-gray-100">Create user-friendly designs.</p>
+        <div className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition">
+          <h3 className="font-semibold text-base sm:text-lg">UI/UX Design</h3>
+          <p className="text-xs sm:text-sm text-gray-400">Create user-friendly designs.</p>
         </div>
         {/* Frontend Development */}
-        <div className="text-center p-4 rounded-md">
-          <h3 className="font-semibold text-lg">Frontend Developer</h3>
-          <p className="text-sm text-gray-400">Build responsive websites.</p>
+        <div className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition">
+          <h3 className="font-semibold text-base sm:text-lg">Frontend Developer</h3>
+          <p className="text-xs sm:text-sm text-gray-400">Build responsive websites.</p>
         </div>
       </div>
     </div>

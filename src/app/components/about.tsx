@@ -33,7 +33,7 @@ const AboutSection = () => {
         {/* Left Side: Image */}
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
           <Image
-            src="/assets/MeWithCamera.JPG" // Replace with your image path
+            src="/samicamera.JPG" // Replace with your image path
             alt="Work Desk"
             width={600}
             height={400}

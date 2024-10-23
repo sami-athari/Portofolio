@@ -15,7 +15,7 @@ export default function Header() {
           <div className="rounded-full bg-gradient-to-r from-gray-800 via-blue-800 to-blue-500 p-1 animate-blob">
             <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden p-1">
               <Image
-                src="/me.png"
+                src="/samiAi.png"
                 alt="Profile"
                 width={400}
                 height={400}
@@ -33,7 +33,7 @@ export default function Header() {
             <span className="text-blue-400">I AM A </span>
             <span style={{ color: 'rgb(15, 76, 117)' }}>
               <Typewriter
-                words={['PHOTOGRAPHER!', 'EDITOR!', 'DESIGNER!', 'DEVELOPER!']}
+                words={[ 'EDITOR', 'DESIGNER', 'DEVELOPER']}
                 loop={true}
                 cursor
                 cursorStyle="|"
@@ -45,17 +45,16 @@ export default function Header() {
           </h1>
           <p className="text-base sm:text-lg mb-8">I AM FROM SMKN 21 JAKARTA</p>
           <div className="space-x-2 sm:space-x-4 mb-4">
-            <a
-              href="#contact"
-              className="px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-400 to-gray-800 rounded-full shadow-lg text-sm sm:text-base"
-            >
-              Contact me
-            </a>
+          <button className="text-zinc-50 hover:text-blue-400 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(166,162,162,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-blue-300 duration-700">
+  Contact Me
+</button>
+
+
             <a
               href="#portfolio"
-              className="px-4 py-2 sm:px-6 sm:py-3 bg-transparent border border-white rounded-full hover:bg-white hover:text-purple-900 transition text-sm sm:text-base"
+              className="px-4 py-1 sm:px5 sm:py-2.5 bg-transparent border border-white rounded-md hover:bg-white hover:text-blue-900 transition text-sm sm:text-base"
             >
-              My Portfolio
+              Download Resume
             </a>
           </div>
 
@@ -64,21 +63,21 @@ export default function Header() {
             <a
               href="https://youtube.com/@samiediting18?si=AogZaID3V184WIXo"
               aria-label="YouTube"
-              className="hover:text-blue-400 transition"
+              className="hover:text-red-700 transition"
             >
               <FaYoutube />
             </a>
             <a
               href="https://github.com/sami-athari"
               aria-label="GitHub"
-              className="hover:text-blue-400 transition"
+              className="hover:text-gray-700 transition"
             >
               <FaGithub />
             </a>
             <a
               href="https://www.instagram.com/samimuancap/profilecard/?igsh=aG9tY3g5N2RneDZy"
               aria-label="Instagram"
-              className="hover:text-blue-400 transition"
+              className="hover:text-pink-500 transition"
             >
               <FaInstagram />
             </a>

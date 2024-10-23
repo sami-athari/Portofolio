@@ -11,8 +11,8 @@ const projectsData = [
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati.',
   },
   {
-    image: '/path-to-your-image2.jpg', // replace with your image path
-    name: 'Julia',
+    image: '/webtugas.png', // replace with your image path
+    name: 'Web Project',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati.',
   },
   {

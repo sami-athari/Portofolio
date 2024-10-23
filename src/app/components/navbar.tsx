@@ -1,28 +1,12 @@
-// components/navbar.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi'; // Hamburger & close icons from react-icons
 
 export default function Navbar() {
   const [active, setActive] = useState('Home');
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // Track if the mobile menu is open
-
-  // Track the scroll position to apply styles when scrolled
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleClick = (page: string) => {
     setActive(page);
@@ -31,9 +15,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-[#0d1b2a]/90 backdrop-blur-md' : 'bg-[#0d1b2a]/50'
-      } px-8 py-4 flex justify-between items-center`}
+      className={`fixed top-0 left-0 w-full z-50 bg-[#0d1b2a]/70 backdrop-blur-md px-8 py-4 flex justify-between items-center transition-all duration-300`}
     >
       {/* Navbar Brand */}
       <div className="text-3xl font-bold">Sami AZ.</div>
@@ -73,7 +55,7 @@ export default function Navbar() {
 
       {/* Mobile Menu (visible only when menuOpen is true) */}
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-[#0d1b2a]/90 backdrop-blur-md:hidden flex flex-col space-y-4 py-4 items-center">
+        <div className="absolute top-16 left-0 w-full bg-[#0d1b2a]/70 backdrop-blur-md z-40 flex flex-col space-y-4 py-4 items-center">
           {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
             <Link
               key={item}
