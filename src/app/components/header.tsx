@@ -1,4 +1,3 @@
-// app/components/Header.tsx
 'use client';
 
 import Image from 'next/image';
@@ -12,14 +11,14 @@ export default function Header() {
         
         {/* Left Section - Image */}
         <div className="relative w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-start lg:ml-auto">
-          <div className="rounded-full bg-gradient-to-r from-gray-800 via-blue-800 to-blue-500 p-1 animate-blob">
-            <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden p-1">
+          <div className="rounded-full bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-400 p-1 animate-blob">
+            <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden p-1 group">
               <Image
                 src="/samiAi.png"
                 alt="Profile"
                 width={400}
                 height={400}
-                className="object-cover"
+                className="object-cover transition-transform duration-500 ease-in-out transform group-hover:scale-110"
               />
             </div>
           </div>
@@ -27,13 +26,13 @@ export default function Header() {
 
         {/* Right Section */}
         <div className="text-center lg:text-left w-full lg:w-1/2">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-zinc-50">
             SAMI ATHARI Z
             <br />
-            <span className="text-blue-400">I AM A </span>
-            <span style={{ color: 'rgb(15, 76, 117)' }}>
+            <span className="text-zinc-400">I AM A </span>
+            <span className="bg-gradient-to-r from-gray-400 via-zinc-600 to-zinc-900 text-transparent bg-clip-text">
               <Typewriter
-                words={[ 'EDITOR', 'DESIGNER', 'DEVELOPER']}
+                words={['EDITOR', 'DESIGNER', 'DEVELOPER']}
                 loop={true}
                 cursor
                 cursorStyle="|"
@@ -43,18 +42,18 @@ export default function Header() {
               />
             </span>
           </h1>
+
           <p className="text-base sm:text-lg mb-8">I AM FROM SMKN 21 JAKARTA</p>
           <div className="space-x-2 sm:space-x-4 mb-4">
-          <button className="text-zinc-50 hover:text-blue-400 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(166,162,162,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-blue-300 duration-700">
-  Contact Me
-</button>
-
+            <button className="text-zinc-50 hover:text-zinc-50 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(255,255,255,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-zinc-50 duration-700">
+              Contact Me
+            </button>
 
             <a
               href="#portfolio"
-              className="px-4 py-1 sm:px5 sm:py-2.5 bg-transparent border border-white rounded-md hover:bg-white hover:text-blue-900 transition text-sm sm:text-base"
+              className="px-4 py-2.5 sm:px2.5 sm:py-2.5 bg-transparent border border-white rounded-md hover:bg-white hover:text-zinc-900 transition text-sm sm:text-base"
             >
-              Download Resume
+              Download CV
             </a>
           </div>
 

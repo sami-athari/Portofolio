@@ -15,10 +15,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 bg-[#0d1b2a]/70 backdrop-blur-md px-8 py-4 flex justify-between items-center transition-all duration-300`}
+      className={`fixed top-0 left-0 w-full z-50 px-8 py-4 flex justify-between items-center 
+      bg-transparent backdrop-blur-md bg-black/50 
+      transition-all duration-300 
+      shadow-[inset_0_-5px_6px_rgba(0,0,0,0.5)]`} // Inner shadow effect
     >
       {/* Navbar Brand */}
-      <div className="text-3xl font-bold">Sami AZ.</div>
+      <div className="text-3xl font-bold" style={{ fontFamily: 'Prata'}}>
+        Sami AZ 
+      </div>
 
       {/* Hamburger Icon for Mobile */}
       <div className="md:hidden">
@@ -43,8 +48,8 @@ export default function Navbar() {
           <Link
             key={item}
             href={`#${item.toLowerCase()}`}
-            className={`hover:text-cyan-400 transition ${
-              active === item ? 'text-cyan-400' : 'text-white'
+            className={`hover:text-gray-400 transition ${
+              active === item ? 'text-gray-400' : 'text-white'
             }`}
             onClick={() => handleClick(item)}
           >
@@ -55,13 +60,13 @@ export default function Navbar() {
 
       {/* Mobile Menu (visible only when menuOpen is true) */}
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-[#0d1b2a]/70 backdrop-blur-md z-40 flex flex-col space-y-4 py-4 items-center">
+        <div className="absolute top-16 left-0 w-full bg-black/50 backdrop-blur-md z-40 flex flex-col space-y-4 py-4 items-center">
           {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
-              className={`hover:text-cyan-400 transition ${
-                active === item ? 'text-cyan-400' : 'text-white'
+              className={`hover:text-gray-400 transition ${
+                active === item ? 'text-gray-400' : 'text-white'
               }`}
               onClick={() => handleClick(item)}
             >

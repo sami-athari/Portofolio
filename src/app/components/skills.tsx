@@ -23,7 +23,10 @@ const SkillSection = () => {
       {/* Skills Icons in rows */}
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 mb-16 max-w-4xl">
         {skillsData.map((skill, index) => (
-          <div key={index} className="flex flex-col items-center">
+          <div
+            key={index}
+            className="flex flex-col items-center transition-transform duration-300 transform hover:scale-110"
+          >
             <Image src={skill.image} alt={skill.name} width={skill.width} height={skill.height} />
             <p className="text-xs sm:text-sm mt-2">{skill.name}</p>
           </div>
@@ -33,17 +36,13 @@ const SkillSection = () => {
       {/* Skills Description */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
         {/* Graphic Design */}
-        <div className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition">
+        <div className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition-transform duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zinc-50/50">
           <h3 className="font-semibold text-base sm:text-lg">Graphic Design</h3>
           <p className="text-xs sm:text-sm text-gray-400">Design logos, posters, and more.</p>
         </div>
-        {/* UI UX Design */}
-        <div className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition">
-          <h3 className="font-semibold text-base sm:text-lg">UI/UX Design</h3>
-          <p className="text-xs sm:text-sm text-gray-400">Create user-friendly designs.</p>
-        </div>
+        
         {/* Frontend Development */}
-        <div className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition">
+        <div className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition-transform duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zinc-50/50">
           <h3 className="font-semibold text-base sm:text-lg">Frontend Developer</h3>
           <p className="text-xs sm:text-sm text-gray-400">Build responsive websites.</p>
         </div>
