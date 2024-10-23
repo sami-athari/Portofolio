@@ -57,7 +57,7 @@ export default function Navbar() {
 
       {/* Navbar Links (visible on desktop, hidden on mobile) */}
       <div className="hidden md:flex space-x-12">
-        {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
+        {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
           <Link
             key={item}
             href={`#${item.toLowerCase()}`}
@@ -74,7 +74,7 @@ export default function Navbar() {
       {/* Mobile Menu (visible only when menuOpen is true) */}
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-[#0d1b2a]/90 backdrop-blur-md:hidden flex flex-col space-y-4 py-4 items-center">
-          {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
+          {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}

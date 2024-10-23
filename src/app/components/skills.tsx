@@ -2,31 +2,35 @@ import React from "react";
 import Image from "next/image";
 
 const skillsData = [
-    { image: "/css.png", name: "Skill 1", width: 50, height: 50 },
-    { image: "/html.png", name: "Skill 2", width: 50, height: 50 },
-    { image: "/tailwind.png", name: "Skill 1", width: 50, height: 50 },
-    { image: "/node-js.png", name: "Skill 2", width: 50, height: 50 },
-    { image: "/react.png", name: "Skill 1", width: 60, height: 50 },
-    { image: "/js.png", name: "Skill 2", width: 50, height: 50 },
-    { image: "/ts.png", name: "Skill 1", width: 50, height: 50 },
-    { image: "/mysql.png", name: "Skill 2", width: 50, height: 50 },
-    { image: "/framer.png", name: "Skill 1", width: 50, height: 50 },
-    { image: "/next.png", name: "Skill 2", width: 50, height: 50 },
-    
-    // Add more skill objects as per your needs
+  { image: "/css.png", name: "CSS", width: 50, height: 50 },
+  { image: "/html.png", name: "HTML", width: 50, height: 50 },
+  { image: "/tailwind.png", name: "Tailwind CSS", width: 50, height: 50 },
+  { image: "/node-js.png", name: "Node.js", width: 50, height: 50 },
+  { image: "/react.png", name: "React", width: 60, height: 50 },
+  { image: "/js.png", name: "JavaScript", width: 50, height: 50 },
+  { image: "/laravel.png", name: "Laravel", width: 50, height: 50 },
+  { image: "/mysql.png", name: "MySQL", width: 50, height: 50 },
+  { image: "/Java.png", name: "Java", width: 50, height: 50 },
+  { image: "/next.png", name: "Next.js", width: 50, height: 50 },
+  // Add more skill objects as per your needs
 ];
 
 const SkillSection = () => {
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-transparent text-white">
-      <h1 className="text-4xl font-bold mb-10">
-        Skills
-      </h1>
-      <div className="flex justify-center gap-6 mb-16">
+    <div id="skills" className="h-screen flex flex-col items-center justify-center bg-transparent text-white">
+      <h1 className="text-4xl font-bold mb-10">Skills</h1>
+      
+      {/* Skills Icons in rows */}
+      <div className="flex flex-wrap justify-center gap-6 mb-16 max-w-4xl">
         {skillsData.map((skill, index) => (
-          <Image key={index} src={skill.image} alt={skill.name} width={skill.width} height={skill.height} />
+          <div key={index} className="flex flex-col items-center">
+            <Image src={skill.image} alt={skill.name} width={skill.width} height={skill.height} />
+            <p className="text-sm mt-2">{skill.name}</p>
+          </div>
         ))}
       </div>
+
+      {/* Skills Description */}
       <div className="flex justify-center gap-10">
         {/* Graphic Design */}
         <div className="text-center p-4 rounded-md">

@@ -7,27 +7,27 @@ import { FaYoutube, FaGithub, FaInstagram } from 'react-icons/fa';
 
 export default function Header() {
   return (
-    <header className="min-h-screen flex flex-col items-center justify-center">
-      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between px-4 lg:px-8">
+    <header className="min-h-screen flex flex-col items-center justify-center px-4 lg:px-8">
+      <div className="container mx-auto flex flex-col lg:flex-row-reverse items-center justify-between space-y-8 lg:space-y-0">
         
-        {/* Right Section - Image */}
-        <div className="relative lg:w-1/2 lg:mt-0 mt-8 flex justify-center lg:justify-end order-1 lg:order-2">
-          <div className="rounded-full bg-gradient-to-r from-blue-700 via-blue-500 to-blue-400 p-1">
-            <div className="rounded-full overflow-hidden p-1 ">
+        {/* Left Section - Image */}
+        <div className="relative w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-start lg:ml-auto">
+          <div className="rounded-full bg-gradient-to-r from-gray-800 via-blue-800 to-blue-500 p-1 animate-blob">
+            <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden p-1">
               <Image
-                src="/assets/profile.jpg"
+                src="/me.png"
                 alt="Profile"
                 width={400}
                 height={400}
-                className="rounded-full"
+                className="object-cover"
               />
             </div>
           </div>
         </div>
 
-        {/* Left Section */}
-        <div className="text-center lg:text-left lg:w-1/2 order-2 lg:order-1">
-          <h1 className="text-6xl font-bold mb-4">
+        {/* Right Section */}
+        <div className="text-center lg:text-left w-full lg:w-1/2">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
             SAMI ATHARI Z
             <br />
             <span className="text-blue-400">I AM A </span>
@@ -43,24 +43,24 @@ export default function Header() {
               />
             </span>
           </h1>
-          <p className="text-lg mb-8">I AM FROM SMKN 21 JAKARTA</p>
-          <div className="space-x-4 mb-4">
+          <p className="text-base sm:text-lg mb-8">I AM FROM SMKN 21 JAKARTA</p>
+          <div className="space-x-2 sm:space-x-4 mb-4">
             <a
               href="#contact"
-              className="px-6 py-3 bg-gradient-to-r from-blue-400 to-gray-800 rounded-full shadow-lg"
+              className="px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-400 to-gray-800 rounded-full shadow-lg text-sm sm:text-base"
             >
               Contact me
             </a>
             <a
               href="#portfolio"
-              className="px-6 py-3 bg-transparent border border-white rounded-full hover:bg-white hover:text-purple-900 transition"
+              className="px-4 py-2 sm:px-6 sm:py-3 bg-transparent border border-white rounded-full hover:bg-white hover:text-purple-900 transition text-sm sm:text-base"
             >
               My Portfolio
             </a>
           </div>
 
           {/* Social Icons */}
-          <div className="mt-4 flex justify-center lg:justify-start space-x-8 text-3xl">
+          <div className="mt-4 flex justify-center lg:justify-start space-x-6 sm:space-x-8 text-2xl sm:text-3xl">
             <a
               href="https://youtube.com/@samiediting18?si=AogZaID3V184WIXo"
               aria-label="YouTube"
@@ -76,7 +76,7 @@ export default function Header() {
               <FaGithub />
             </a>
             <a
-              href="https://instagram.com/"
+              href="https://www.instagram.com/samimuancap/profilecard/?igsh=aG9tY3g5N2RneDZy"
               aria-label="Instagram"
               className="hover:text-blue-400 transition"
             >

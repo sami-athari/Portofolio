@@ -56,3 +56,11 @@ html {
 .reverse-animated-scroll {
   animation: reverse-scroll 20s linear infinite;
 }
+
+/* Global CSS file */
+
+.hover\:shadow-neon:hover {
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.7);
+  border: 2px solid rgba(0, 255, 255, 0.7);
+  transform: scale(1.05);
+}
