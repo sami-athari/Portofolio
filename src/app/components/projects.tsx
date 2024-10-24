@@ -3,74 +3,70 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const projectsData = [
   {
     image: '/ToDoList.jpg',
     name: 'ToDoList',
-    description: 'i made a todolist project using html, css, and js.',
+    description: 'I made a todolist project using HTML, CSS, and JavaScript.',
   },
   {
     image: '/webtugas.png',
     name: 'Web Project',
-    description: 'i made a front end web project using react.',
+    description: 'I made a front-end web project using React.',
   },
   {
     image: '/porto.png',
-    name: 'Web Portofolio',
-    description: 'I made a web portofolio about my self using next.js and tailwind css',
+    name: 'Web Portfolio',
+    description: 'I made a web portfolio about myself using Next.js and Tailwind CSS.',
   },
   {
-    image: '/path-to-your-image4.jpg',
-    name: 'Knight Coin',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati.',
+    image: '/knightgame.png',
+    name: 'Platformer Game',
+    description: 'A platformer game project built with HTML5 and JavaScript.',
   },
   {
     image: '/photographh.jpg',
     name: 'Photograph',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati.',
+    description: 'Photography is one of my hobbies and passions.',
   },
   {
-    image: '/path-to-your-image6.jpg',
-    name: 'Laravel Library',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati.',
+    image: '/perpu.png',
+    name: 'Web Library',
+    description: 'A library management system built with Laravel.',
   },
 ];
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const touchStartXRef = useRef<number>(0); // Untuk menyimpan posisi touch awal
-  const touchEndXRef = useRef<number>(0);   // Untuk menyimpan posisi touch akhir
+  const touchStartXRef = useRef<number>(0);
+  const touchEndXRef = useRef<number>(0);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % projectsData.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       (prevIndex - 1 + projectsData.length) % projectsData.length
     );
   };
 
-  // Handle touch start
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartXRef.current = e.touches[0].clientX;
   };
 
-  // Handle touch move
   const handleTouchMove = (e: React.TouchEvent) => {
     touchEndXRef.current = e.touches[0].clientX;
   };
 
-  // Handle touch end
   const handleTouchEnd = () => {
     const deltaX = touchStartXRef.current - touchEndXRef.current;
-
-    // Check if swipe distance is enough to trigger next/prev
     if (deltaX > 50) {
-      handleNext(); // Geser ke kanan
+      handleNext();
     } else if (deltaX < -50) {
-      handlePrev(); // Geser ke kiri
+      handlePrev();
     }
   };
 
@@ -86,17 +82,26 @@ const Projects = () => {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Arrow Left */}
-        <button
+        {/* Arrow Left with Rotation */}
+        <motion.button
           onClick={handlePrev}
           className="absolute left-4 md:left-8 text-white bg-zinc-600 hover:bg-zinc-800 p-3 rounded-full z-10"
           aria-label="Previous Slide"
+          whileTap={{ rotate: 360 }}
+          transition={{ type: 'spring', stiffness: 200 }}
         >
           <FaArrowLeft />
-        </button>
+        </motion.button>
 
-        {/* Project Card */}
-        <div className="w-[300px] sm:w-[400px] lg:w-[500px] bg-zinc-900 rounded-md p-6 text-center transition duration-300 ease-in-out transform hover:shadow-neon">
+        {/* Project Card with Smooth Entry Animation */}
+        <motion.div
+          className="w-[300px] sm:w-[400px] lg:w-[500px] bg-zinc-900 rounded-md p-6 text-center transition duration-300 ease-in-out transform hover:shadow-neon"
+          key={currentIndex}
+          initial={{ opacity: 0, scale: 0.8, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8, y: 50 }}
+          transition={{ duration: 0.5, type: 'spring' }}
+        >
           <div className="overflow-hidden rounded-md">
             <Image
               src={projectsData[currentIndex].image}
@@ -107,20 +112,19 @@ const Projects = () => {
             />
           </div>
           <h3 className="mt-4 text-white text-xl font-bold">{projectsData[currentIndex].name}</h3>
-          <div className="flex justify-center mt-2 mb-4">
-            
-          </div>
           <p className="text-gray-400 text-sm">{projectsData[currentIndex].description}</p>
-        </div>
+        </motion.div>
 
-        {/* Arrow Right */}
-        <button
+        {/* Arrow Right with Rotation */}
+        <motion.button
           onClick={handleNext}
           className="absolute right-4 md:right-8 text-white bg-zinc-600 hover:bg-zinc-800 p-3 rounded-full z-10"
           aria-label="Next Slide"
+          whileTap={{ rotate: 360 }}
+          transition={{ type: 'spring', stiffness: 200 }}
         >
           <FaArrowRight />
-        </button>
+        </motion.button>
       </div>
 
       {/* Dots Navigation */}

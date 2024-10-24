@@ -48,8 +48,8 @@ export default function Navbar() {
           <Link
             key={item}
             href={`#${item.toLowerCase()}`}
-            className={`hover:text-gray-400 transition ${
-              active === item ? 'text-gray-400' : 'text-white'
+            className={`hover:text-white transition ${
+              active === item ? 'text-white' : 'text-gray-400'
             }`}
             onClick={() => handleClick(item)}
           >
@@ -65,8 +65,8 @@ export default function Navbar() {
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
-              className={`hover:text-gray-400 transition ${
-                active === item ? 'text-gray-400' : 'text-white'
+              className={`hover:text-white transition ${
+                active === item ? 'text-white' : 'text-gray-400'
               }`}
               onClick={() => handleClick(item)}
             >

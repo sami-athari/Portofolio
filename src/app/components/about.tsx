@@ -1,21 +1,18 @@
 "use client";
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const TAB_DATA = [
   {
     title: "Education",
     id: "education",
-    content: (
-      <p className="text-white">SMKN 21 Jakarta - Web Development</p>
-    ),
+    content: <p className="text-white">SMKN 21 Jakarta - Web Development</p>,
   },
   {
     title: "Certifications",
     id: "certifications",
-    content: (
-      <p className="text-white">Laravel Mastery, Frontend Development</p>
-    ),
+    content: <p className="text-white">Laravel Mastery, Frontend Development</p>,
   },
 ];
 
@@ -26,7 +23,7 @@ const AboutSection = () => {
   const handleMouseMove = (e: React.MouseEvent) => {
     const { clientX, clientY, currentTarget } = e;
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
-    
+
     const xOffset = (clientX - left - width / 2) / 20;
     const yOffset = (clientY - top - height / 2) / 20;
 
@@ -48,14 +45,17 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center bg-[rgb(17,17,17)] text-white px-4"
+       className="min-h-screen flex items-center justify-center bg-[rgb(17,17,17)] text-white px-4 overflow-hidden"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-6xl mx-auto p-8 space-y-8 lg:space-y-0">
-        {/* Left Side: Image */}
-        <div
+        {/* Left Side: Image with motion animation */}
+        <motion.div
           className="relative w-full lg:w-1/2 flex justify-center lg:justify-start"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ duration: 1 }}
         >
           <div
             ref={imageRef}
@@ -70,10 +70,15 @@ const AboutSection = () => {
               className="rounded-lg shadow-lg"
             />
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Side: Text */}
-        <div className="w-full lg:w-1/2 lg:ml-10 text-center lg:text-left">
+        {/* Right Side: Text with motion animation */}
+        <motion.div
+          className="w-full lg:w-1/2 lg:ml-10 text-center lg:text-left"
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 100 }}
+          transition={{ duration: 1 }}
+        >
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Me</h2>
           <p className="text-md sm:text-lg mb-6">
             I`m Sami Athari Zahid, a passionate web developer at SMKN 21
@@ -104,7 +109,7 @@ const AboutSection = () => {
           <div className="text-center lg:text-left">
             {TAB_DATA.find((t) => t.id === tab)?.content}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

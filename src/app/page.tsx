@@ -8,7 +8,7 @@ import Footer from './components/footer';
 import Transition from './components/transition';
 export default function HomePage() {
   return (
-    <div className="bg-gradient-to-b from-zinc-900 to-zinc-900">
+    <div className="bg-gradient-to-b from-zinc-900 to-zinc-900 overflow-hidden">
       <Header />
       <About />
       <Skills />
