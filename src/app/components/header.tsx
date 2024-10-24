@@ -54,7 +54,7 @@ export default function Header() {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg mb-8">I AM FROM SMKN 21 JAKARTA</p>
+          <p className="text-base sm:text-lg mb-8">IM A DEVELOPER PASSIONATE ABOUT PROGRAMMING, PHOTOGRAPHY, AND EDITING.</p>
           <div className="space-x-2 sm:space-x-4 mb-4">
             <motion.button
               className="text-zinc-50 hover:text-zinc-50 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(255,255,255,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-zinc-50 duration-700"
