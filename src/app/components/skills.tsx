@@ -15,7 +15,6 @@ const skillsData = [
   { image: "/mysql.png", name: "MySQL", width: 50, height: 50 },
   { image: "/Java.png", name: "Java", width: 50, height: 50 },
   { image: "/next.png", name: "Next.js", width: 50, height: 50 },
-  // Add more skill objects as per your needs
 ];
 
 const SkillSection = () => {
@@ -31,23 +30,28 @@ const SkillSection = () => {
         className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 mb-16 max-w-4xl overflow-hidden"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delayChildren: 0.2, staggerChildren: 0.1, duration: 0.8 }}
+        transition={{ delayChildren: 0.2, staggerChildren: 0.15, duration: 0.8, ease: "easeOut" }} // Slightly more time and easing for smoothness
         viewport={{ once: true }}
       >
         {skillsData.map((skill, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center transition-transform duration-300 transform hover:scale-110"
+            className="flex flex-col items-center transition-transform duration-300 transform"
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
+            transition={{ duration: 0.6, delay: index * 0.15 }} // Increase the duration for smoother animation
           >
-            <Image
-              src={skill.image}
-              alt={skill.name}
-              width={skill.width}
-              height={skill.height}
-            />
+            <motion.div
+              whileHover={{ scale: 1.1 }} // Smooth zoom on hover
+              transition={{ type: 'spring', stiffness: 180, damping: 20 }} // Reduced stiffness and increased damping for smoother effect
+            >
+              <Image
+                src={skill.image}
+                alt={skill.name}
+                width={skill.width}
+                height={skill.height}
+              />
+            </motion.div>
             <p className="text-xs sm:text-sm mt-2">{skill.name}</p>
           </motion.div>
         ))}
@@ -68,7 +72,7 @@ const SkillSection = () => {
           className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition-transform duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zinc-50/50"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }} // Slower and smoother entrance
         >
           <h3 className="font-semibold text-base sm:text-lg">Graphic Design</h3>
           <p className="text-xs sm:text-sm text-gray-400">
@@ -80,7 +84,7 @@ const SkillSection = () => {
           className="p-4 rounded-md bg-gray-800 hover:bg-gray-700 transition-transform duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zinc-50/50"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }} // Similar smooth effect
         >
           <h3 className="font-semibold text-base sm:text-lg">
             Frontend Developer
@@ -89,8 +93,6 @@ const SkillSection = () => {
             Build responsive websites.
           </p>
         </motion.div>
-
-        {/* You can add more cards with similar effects here */}
       </motion.div>
     </div>
   );

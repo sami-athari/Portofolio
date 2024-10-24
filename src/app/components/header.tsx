@@ -99,7 +99,7 @@ export default function Header() {
               aria-label="Instagram"
               className="hover:text-pink-500 transition"
               whileHover={{ scale: 1.2 }} // Scale up on hover
-              transition={{ duration: 0.3 }}
+              transition={{ duration:   0.3 }}
             >
               <FaInstagram />
             </motion.a>

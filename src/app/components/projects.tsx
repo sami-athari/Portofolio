@@ -27,7 +27,7 @@ const projectsData = [
   {
     image: '/knightgame.png',
     name: 'Platformer Game',
-    description: 'A platformer game project built with HTML5 and JavaScript.',
+    description: 'A platformer game project built with Gdevelop.',
     link: 'https://sami-athari.itch.io/knight-quest', // Vercel link
   },
   {

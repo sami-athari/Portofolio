@@ -3,8 +3,8 @@ import Navbar from './components/navbar';
 import './globals.css';
 
 export const metadata = {
-  title: 'Portfolio',
-  description: 'My personal portfolio',
+  title: 'Sami AZ Portofolio',
+  description: 'Sami Athari Zahid personal portfolio',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

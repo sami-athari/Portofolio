@@ -12,7 +12,15 @@ const TAB_DATA = [
   {
     title: "Certifications",
     id: "certifications",
-    content: <p className="text-white">Laravel Mastery, Frontend Development</p>,
+    content: (
+      <Image
+        src="/sertipt.png" // Replace with your certificate image path
+        alt="Certificate"
+        width={300} // Smaller width
+        height={200} // Smaller height
+        className="rounded-md shadow-lg" // Slightly rounded corners
+      />
+    ),
   },
 ];
 
@@ -45,7 +53,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-       className="min-h-screen flex items-center justify-center bg-[rgb(17,17,17)] text-white px-4 overflow-hidden"
+      className="min-h-screen flex items-center justify-center bg-[rgb(17,17,17)] text-white px-4 overflow-hidden"
     >
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-6xl mx-auto p-8 space-y-8 lg:space-y-0">
         {/* Left Side: Image with motion animation */}
