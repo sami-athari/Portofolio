@@ -10,31 +10,37 @@ const projectsData = [
     image: '/ToDoList.jpg',
     name: 'ToDoList',
     description: 'I made a todolist project using HTML, CSS, and JavaScript.',
+    link: 'https://todolist-green-theta.vercel.app/?vercelToolbarCode=J19MWH_6dHW3oim', // Vercel link
   },
   {
     image: '/webtugas.png',
     name: 'Web Project',
     description: 'I made a front-end web project using React.',
+    link: 'https://samiuts.vercel.app/?vercelToolbarCode=lbLMZTh1CIGQqCj', // Vercel link
   },
   {
     image: '/porto.png',
     name: 'Web Portfolio',
     description: 'I made a web portfolio about myself using Next.js and Tailwind CSS.',
+    link: 'https://portofolio-g9jr.vercel.app/?vercelToolbarCode=Wg_CSHrAOedzxHI', // Vercel link
   },
   {
     image: '/knightgame.png',
     name: 'Platformer Game',
     description: 'A platformer game project built with HTML5 and JavaScript.',
+    link: 'https://sami-athari.itch.io/knight-quest', // Vercel link
   },
   {
     image: '/photographh.jpg',
     name: 'Photograph',
     description: 'Photography is one of my hobbies and passions.',
+    link: 'https://photographh.vercel.app', // Vercel link
   },
   {
     image: '/perpu.png',
     name: 'Web Library',
     description: 'A library management system built with Laravel.',
+    link: 'https://github.com/sami-athari/perpusssss', // Vercel link
   },
 ];
 
@@ -103,16 +109,22 @@ const Projects = () => {
           transition={{ duration: 0.5, type: 'spring' }}
         >
           <div className="overflow-hidden rounded-md">
-            <Image
-              src={projectsData[currentIndex].image}
-              alt={projectsData[currentIndex].name}
-              width={500}
-              height={300}
-              className="object-cover w-full h-48"
-            />
+            <a href={projectsData[currentIndex].link} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={projectsData[currentIndex].image}
+                alt={projectsData[currentIndex].name}
+                width={500}
+                height={300}
+                className="object-cover w-full h-48"
+              />
+            </a>
           </div>
-          <h3 className="mt-4 text-white text-xl font-bold">{projectsData[currentIndex].name}</h3>
-          <p className="text-gray-400 text-sm">{projectsData[currentIndex].description}</p>
+          <h3 className="mt-4 text-white text-xl font-bold">
+            {projectsData[currentIndex].name}
+          </h3>
+          <p className="text-gray-400 text-sm">
+            {projectsData[currentIndex].description}
+          </p>
         </motion.div>
 
         {/* Arrow Right with Rotation */}
@@ -132,7 +144,9 @@ const Projects = () => {
         {projectsData.map((_, index) => (
           <div
             key={index}
-            className={`w-3 h-3 mx-2 rounded-full ${index === currentIndex ? 'bg-zinc-200' : 'bg-gray-600'}`}
+            className={`w-3 h-3 mx-2 rounded-full ${
+              index === currentIndex ? 'bg-zinc-200' : 'bg-gray-600'
+            }`}
           />
         ))}
       </div>
