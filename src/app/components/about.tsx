@@ -7,7 +7,13 @@ const TAB_DATA = [
   {
     title: "Education",
     id: "education",
-    content: <p className="text-white">SMKN 21 Jakarta - Web Development</p>,
+    content: <div className="text-white">
+    <p>SDN 03 Jakarta</p>
+    <p>SMPN 269 Jakarta - Photograph Development</p>
+    <p>SMKN 21 Jakarta - Web Development</p>
+  </div>,
+    
+    
   },
   {
     title: "Certifications",

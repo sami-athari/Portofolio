@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function Header() {
   return (
-    <header className="min-h-screen flex flex-col items-center justify-center px-4 lg:px-8">
+    <header className="min-h-screen flex flex-col items-center justify-center px-4 lg:px-8 py-9">
       <div className="container mx-auto flex flex-col lg:flex-row-reverse items-center justify-between space-y-8 lg:space-y-0">
         
         {/* Left Section - Image */}
@@ -18,15 +18,19 @@ export default function Header() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <div className="rounded-full bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-400 p-1 animate-blob">
-            <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden p-1 group">
+            <motion.div
+              className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden"
+              whileHover={{ scale: 1.1 }} // Zoom only the image and border
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+            >
               <Image
-                src="/samiAi.png"
+                src="/topisami.jpg"
                 alt="Profile"
                 width={400}
                 height={400}
-                className="object-cover transition-transform duration-500 ease-in-out transform group-hover:scale-110"
+                className="object-cover w-full h-full transition-transform duration-500 ease-in-out transform" // Remove the default zoom and apply hover effect
               />
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
@@ -43,7 +47,7 @@ export default function Header() {
             <span className="text-zinc-400">I AM A </span>
             <span className="bg-gradient-to-r from-gray-400 via-zinc-600 to-zinc-900 text-transparent bg-clip-text">
               <Typewriter
-                words={['EDITOR', 'DESIGNER', 'DEVELOPER']}
+                words={['EDITOR', 'DEVELOPER']}
                 loop={true}
                 cursor
                 cursorStyle="|"
@@ -99,7 +103,7 @@ export default function Header() {
               aria-label="Instagram"
               className="hover:text-pink-500 transition"
               whileHover={{ scale: 1.2 }} // Scale up on hover
-              transition={{ duration:   0.3 }}
+              transition={{ duration: 0.3 }}
             >
               <FaInstagram />
             </motion.a>

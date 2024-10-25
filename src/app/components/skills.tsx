@@ -21,7 +21,7 @@ const SkillSection = () => {
   return (
     <div
       id="skills"
-      className="min-h-screen flex flex-col items-center justify-center bg-transparent text-white px-4 md:px-8"
+      className="min-h-screen flex flex-col items-center justify-center bg-transparent text-white px-4 md:px-8 py-9"
     >
       <h1 className="text-3xl md:text-4xl font-bold mb-10">Skills</h1>
 
@@ -74,9 +74,9 @@ const SkillSection = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }} // Slower and smoother entrance
         >
-          <h3 className="font-semibold text-base sm:text-lg">Graphic Design</h3>
+          <h3 className="font-semibold text-base sm:text-lg">Editor</h3>
           <p className="text-xs sm:text-sm text-gray-400">
-            Design logos, posters, and more.
+            Edit Videos.
           </p>
         </motion.div>
 
