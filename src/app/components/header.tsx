@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Typewriter } from 'react-simple-typewriter';
 import { FaYoutube, FaGithub, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import Link from 'next/link'; // Import the Link component
 
 export default function Header() {
   return (
@@ -60,13 +61,15 @@ export default function Header() {
 
           <p className="text-base sm:text-lg mb-8">IM A DEVELOPER PASSIONATE ABOUT PROGRAMMING, PHOTOGRAPHY, AND EDITING.</p>
           <div className="space-x-2 sm:space-x-4 mb-4">
-            <motion.button
-              className="text-zinc-50 hover:text-zinc-50 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(255,255,255,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-zinc-50 duration-700"
-              whileHover={{ scale: 1.05 }} // Slight scale up on hover
-              whileTap={{ scale: 0.95 }} // Shrink a little when clicked
-            >
-              Contact Me
-            </motion.button>
+            <Link href="#contact">
+              <motion.button
+                className="text-zinc-50 hover:text-zinc-50 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(255,255,255,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-zinc-50 duration-700"
+                whileHover={{ scale: 1.05 }} // Slight scale up on hover
+                whileTap={{ scale: 0.95 }} // Shrink a little when clicked
+              >
+                Contact Me
+              </motion.button>
+            </Link>
 
             <motion.a
               href="#portfolio"

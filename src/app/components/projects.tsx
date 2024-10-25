@@ -106,7 +106,7 @@ const Projects = () => {
           initial={{ opacity: 0, scale: 0.8, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 50 }}
-          transition={{ duration: 0.5, type: 'spring' }}
+          transition={{ duration: 0.0, type: 'spring' }}
         >
           <div className="overflow-hidden rounded-md">
             <a href={projectsData[currentIndex].link} target="_blank" rel="noopener noreferrer">

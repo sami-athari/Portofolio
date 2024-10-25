@@ -7,13 +7,13 @@ const TAB_DATA = [
   {
     title: "Education",
     id: "education",
-    content: <div className="text-white">
-    <p>SDN 03 Jakarta</p>
-    <p>SMPN 269 Jakarta - Photograph Development</p>
-    <p>SMKN 21 Jakarta - Web Development</p>
-  </div>,
-    
-    
+    content: (
+      <div className="text-white">
+        <p>SDN 03 Jakarta</p>
+        <p>SMPN 269 Jakarta - Photograph Development</p>
+        <p>SMKN 21 Jakarta - Web Development</p>
+      </div>
+    ),
   },
   {
     title: "Certifications",
@@ -38,17 +38,18 @@ const AboutSection = () => {
     const { clientX, clientY, currentTarget } = e;
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
 
-    const xOffset = (clientX - left - width / 2) / 20;
-    const yOffset = (clientY - top - height / 2) / 20;
+    // Calculate rotation effect with higher values for more emphasis
+    const xOffset = (clientX - left - width / 2) / 10; // Stronger effect by dividing by a smaller number
+    const yOffset = (clientY - top - height / 2) / 10;
 
     if (imageRef.current) {
-      imageRef.current.style.transform = `rotateX(${yOffset}deg) rotateY(${xOffset}deg)`;
+      imageRef.current.style.transform = `rotateX(${yOffset}deg) rotateY(${xOffset}deg) scale(1.05)`; // Added slight scale for emphasis
     }
   };
 
   const handleMouseLeave = () => {
     if (imageRef.current) {
-      imageRef.current.style.transform = "rotateX(0deg) rotateY(0deg)";
+      imageRef.current.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)"; // Reset the transform on leave
     }
   };
 
