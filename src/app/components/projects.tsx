@@ -11,7 +11,7 @@ const projectsData = [
     name: 'ToDoList',
     description: 'I made a todolist project using HTML, CSS, and JavaScript.',
     githubLink: 'https://github.com/sami-athari/To-do-list', // GitHub link
-    deployLink: 'https://todolist-green-theta.vercel.app/?vercelToolbarCode=J19MWH_6dHW3oim', // Deploy link
+    deployLink: 'https://sami-athari.github.io/To-do-list/', // Deploy link
   },
   {
     image: '/webtugas.png',
