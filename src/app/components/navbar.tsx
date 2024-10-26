@@ -1,16 +1,16 @@
+
 'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { FiMenu, FiX } from 'react-icons/fi'; // Hamburger & close icons from react-icons
+import { FiMenu, FiX } from 'react-icons/fi';
 
 export default function Navbar() {
   const [active, setActive] = useState('Home');
-  const [menuOpen, setMenuOpen] = useState(false); // Track if the mobile menu is open
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleClick = (page: string) => {
     setActive(page);
-    setMenuOpen(false); // Close menu when a link is clicked
   };
 
   return (
@@ -18,10 +18,9 @@ export default function Navbar() {
       className={`fixed top-0 left-0 w-full z-50 px-8 py-4 flex justify-between items-center 
       bg-transparent backdrop-blur-md bg-black/50 
       transition-all duration-300 
-      shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]`} // Inner shadow effect
+      shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]`}
     >
-      {/* Navbar Brand */}
-      <div className="text-3xl font-bold" style={{ fontFamily: 'Prata' }}>
+      <div className="text-3xl font-bold" style={{ fontFamily: 'Baskervville, serif' }}>
         Sami AZ
       </div>
 
@@ -63,7 +62,7 @@ export default function Navbar() {
         className={`absolute top-16 left-0 w-full bg-black/50 backdrop-blur-md z-40 flex flex-row justify-center space-x-4 py-4 items-center rounded-b-3xl 
         transition-transform duration-300 ease-in-out transform ${
           menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'
-        }`} // Added backdrop-blur-md for the mobile menu
+        }`}
       >
         {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
           <Link

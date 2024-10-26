@@ -82,7 +82,7 @@ const SkillSection = () => {
         >
           <h3 className="font-semibold text-base sm:text-lg">Editor</h3>
           <p className="text-xs sm:text-sm text-gray-400">
-            Edit Videos.
+            Edit Videos and Photos.
           </p>
         </motion.div>
 

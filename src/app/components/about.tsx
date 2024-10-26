@@ -19,13 +19,15 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <Image
-        src="/sertipt.png" // Replace with your certificate image path
-        alt="Certificate"
-        width={300} // Smaller width
-        height={200} // Smaller height
-        className="rounded-md shadow-lg" // Slightly rounded corners
-      />
+      <a href="/sertipt.png" target="_blank" rel="noopener noreferrer">
+        <Image
+          src="/sertipt.png" // Replace with your certificate image path
+          alt="Certificate"
+          width={300} // Smaller width
+          height={200} // Smaller height
+          className="rounded-md shadow-lg cursor-pointer" // Added cursor-pointer for visual feedback
+        />
+      </a>
     ),
   },
 ];
@@ -96,11 +98,9 @@ const AboutSection = () => {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Me</h2>
           <p className="text-md sm:text-lg mb-6">
-            I`m Sami Athari Zahid, a passionate web developer at SMKN 21
-            specializing in PHP, Laravel, and Next.js. I thrive on building
-            functional, visually stunning web applications. As the captain of
-            my school`s basketball team, I embrace teamwork and discipline in
-            my projects.
+          I`m Sami Athari Zahid, a Muslim and passionate web developer from Indonesia. Specializing in PHP, Laravel, and Next.js, I build functional, visually stunning web applications. As captain of my school’s basketball team, I bring teamwork and discipline to every project.
+
+
           </p>
 
           {/* Tabs: Skills, Education, Certifications */}

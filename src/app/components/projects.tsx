@@ -10,37 +10,42 @@ const projectsData = [
     image: '/ToDoList.jpg',
     name: 'ToDoList',
     description: 'I made a todolist project using HTML, CSS, and JavaScript.',
-    link: 'https://todolist-green-theta.vercel.app/?vercelToolbarCode=J19MWH_6dHW3oim', // Vercel link
+    githubLink: 'https://github.com/sami-athari/To-do-list', // GitHub link
+    deployLink: 'https://todolist-green-theta.vercel.app/?vercelToolbarCode=J19MWH_6dHW3oim', // Deploy link
   },
   {
     image: '/webtugas.png',
     name: 'Web Project',
     description: 'I made a front-end web project using React.',
-    link: 'https://samiuts.vercel.app/?vercelToolbarCode=lbLMZTh1CIGQqCj', // Vercel link
+    githubLink: 'https://github.com/sami-athari/samiuts', // GitHub link
+    deployLink: 'https://samiuts.vercel.app/?vercelToolbarCode=lbLMZTh1CIGQqCj', // Deploy link
   },
   {
     image: '/porto.png',
     name: 'Web Portfolio',
     description: 'I made a web portfolio about myself using Next.js and Tailwind CSS.',
-    link: 'https://portofolio-g9jr.vercel.app/?vercelToolbarCode=Wg_CSHrAOedzxHI', // Vercel link
+    githubLink: 'https://github.com/sami-athari/portofolio', // GitHub link
+    deployLink: 'https://portofolio-g9jr.vercel.app/?vercelToolbarCode=Wg_CSHrAOedzxHI', // Deploy link
   },
   {
     image: '/knightgame.png',
     name: 'Platformer Game',
     description: 'A platformer game project built with Gdevelop.',
-    link: 'https://sami-athari.itch.io/knight-quest', // Vercel link
+    // No GitHub link
+    deployLink: 'https://sami-athari.itch.io/knight-quest', // Deploy link
   },
   {
     image: '/photographh.jpg',
     name: 'Photograph',
     description: 'Photography is one of my hobbies and passions.',
-    link: 'https://photographh.vercel.app', // Vercel link
+    // No GitHub and Deploy links
   },
   {
     image: '/perpu.png',
     name: 'Web Library',
     description: 'A library management system built with Laravel.',
-    link: 'https://github.com/sami-athari/perpusssss', // Vercel link
+    githubLink: 'https://github.com/sami-athari/perpusssss', // GitHub link
+    // No Deploy link
   },
 ];
 
@@ -109,15 +114,13 @@ const Projects = () => {
           transition={{ duration: 0.0, type: 'spring' }}
         >
           <div className="overflow-hidden rounded-md">
-            <a href={projectsData[currentIndex].link} target="_blank" rel="noopener noreferrer">
-              <Image
-                src={projectsData[currentIndex].image}
-                alt={projectsData[currentIndex].name}
-                width={500}
-                height={300}
-                className="object-cover w-full h-48"
-              />
-            </a>
+            <Image
+              src={projectsData[currentIndex].image}
+              alt={projectsData[currentIndex].name}
+              width={500}
+              height={300}
+              className="object-cover w-full h-48"
+            />
           </div>
           <h3 className="mt-4 text-white text-xl font-bold">
             {projectsData[currentIndex].name}
@@ -125,6 +128,30 @@ const Projects = () => {
           <p className="text-gray-400 text-sm">
             {projectsData[currentIndex].description}
           </p>
+
+          {/* Buttons for GitHub and Deploy Links */}
+          <div className="flex justify-center space-x-4 mt-4">
+            {projectsData[currentIndex].githubLink && (
+              <a
+                href={projectsData[currentIndex].githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-zinc-700 text-white rounded-md hover:bg-zinc-800 transition"
+              >
+                GitHub
+              </a>
+            )}
+            {projectsData[currentIndex].deployLink && (
+              <a
+                href={projectsData[currentIndex].deployLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-zinc-600 text-white rounded-md hover:bg-zinc-700 transition"
+              >
+                Deploy
+              </a>
+            )}
+          </div>
         </motion.div>
 
         {/* Arrow Right with Rotation */}
@@ -145,7 +172,7 @@ const Projects = () => {
           <div
             key={index}
             className={`w-3 h-3 mx-2 rounded-full ${
-              index === currentIndex ? 'bg-zinc-200' : 'bg-gray-600'
+              index === currentIndex ? 'bg-zinc-200' : 'bg-gray-800'
             }`}
           />
         ))}
