@@ -61,7 +61,7 @@ export default function Header() {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg mb-8">I`M A DEVELOPER PASSIONATE ABOUT PROGRAMMING, PHOTOGRAPHY, AND EDITING.</p>
+          <p className="text-base sm:text-lg mb-8">I&apos;M A DEVELOPER PASSIONATE ABOUT PROGRAMMING, PHOTOGRAPHY, AND EDITING.</p>
           <div className="space-x-2 sm:space-x-4 mb-4">
             <Link href="#contact">
               <motion.button

@@ -74,20 +74,20 @@ const SkillSection = () => {
       >
         <motion.div
         
-          className="p-4 rounded-md bg-gray-800 hover:bg-gray-700  hover:shadow-lg hover:shadow-zinc-50/50"
+          className="p-4 rounded-md bg-zinc-800 hover:bg-zinc-700  hover:shadow-lg hover:shadow-zinc-50/50"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           whileHover={{scale: 1.15}}
           transition={{ duration: 0.8, ease: "easeOut" }} // Slower and smoother entrance
         >
           <h3 className="font-semibold text-base sm:text-lg">Editor</h3>
-          <p className="text-xs sm:text-sm text-gray-400">
+          <p className="text-xs sm:text-sm text-zinc-400">
             Edit Videos and Photos.
           </p>
         </motion.div>
 
         <motion.div
-          className="p-4 rounded-md bg-gray-800 hover:bg-gray-700  hover:shadow-lg hover:shadow-zinc-50/50"
+          className="p-4 rounded-md bg-zinc-800 hover:bg-zinc-700  hover:shadow-lg hover:shadow-zinc-50/50"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           whileHover={{scale: 1.15}}
@@ -96,7 +96,7 @@ const SkillSection = () => {
           <h3 className="font-semibold text-base sm:text-lg">
             Frontend Developer
           </h3>
-          <p className="text-xs sm:text-sm text-gray-400">
+          <p className="text-xs sm:text-sm text-zinc-400">
             Build responsive websites.
           </p>
         </motion.div>

@@ -1,7 +1,8 @@
-"use client";
+'use client';
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FiSearch } from "react-icons/fi"; // Import search icon
 
 const TAB_DATA = [
   {
@@ -19,14 +20,19 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <a href="/sertipt.png" target="_blank" rel="noopener noreferrer">
+      <a href="/sertipt.png" target="_blank" rel="noopener noreferrer" className="group relative inline-block">
+        {/* Image with blur and search icon overlay on hover */}
         <Image
-          src="/sertipt.png" // Replace with your certificate image path
+          src="/sertipt.png"
           alt="Certificate"
-          width={300} // Smaller width
-          height={200} // Smaller height
-          className="rounded-md shadow-lg cursor-pointer" // Added cursor-pointer for visual feedback
+          width={300}
+          height={200}
+          className="rounded-md shadow-lg transition duration-300  cursor-pointer"
         />
+        {/* Overlay with search icon */}
+        <div className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-md opacity-0 group-hover:opacity-100 transition duration-300">
+          <FiSearch className="text-white text-3xl" />
+        </div>
       </a>
     ),
   },
@@ -40,18 +46,17 @@ const AboutSection = () => {
     const { clientX, clientY, currentTarget } = e;
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
 
-    // Calculate rotation effect with higher values for more emphasis
-    const xOffset = (clientX - left - width / 2) / 10; // Stronger effect by dividing by a smaller number
+    const xOffset = (clientX - left - width / 2) / 10;
     const yOffset = (clientY - top - height / 2) / 10;
 
     if (imageRef.current) {
-      imageRef.current.style.transform = `rotateX(${yOffset}deg) rotateY(${xOffset}deg) scale(1.05)`; // Added slight scale for emphasis
+      imageRef.current.style.transform = `rotateX(${yOffset}deg) rotateY(${xOffset}deg) scale(1.05)`;
     }
   };
 
   const handleMouseLeave = () => {
     if (imageRef.current) {
-      imageRef.current.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)"; // Reset the transform on leave
+      imageRef.current.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
     }
   };
 
@@ -76,11 +81,11 @@ const AboutSection = () => {
         >
           <div
             ref={imageRef}
-            className="relative w-full max-w-xs lg:max-w-md transition-transform duration-300"
+            className="relative w-full max-w-xs lg:max-w-md transition-transform duration-300 group"
           >
             <div className="absolute inset-0 z-[-1] bg-gradient-to-br from-blue-600 via-pink-500 to-yellow-300 blur-2xl opacity-30 rounded-lg"></div>
             <Image
-              src="/samicamera.JPG" // Replace with your image path
+              src="/samicamera.JPG"
               alt="Work Desk"
               width={600}
               height={400}
@@ -98,9 +103,7 @@ const AboutSection = () => {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Me</h2>
           <p className="text-md sm:text-lg mb-6">
-          I`m Sami Athari Zahid, a Muslim and passionate web developer from Indonesia. Specializing in PHP, Laravel, and Next.js, I build functional, visually stunning web applications. As captain of my school’s basketball team, I bring teamwork and discipline to every project.
-
-
+            I&apos;m Sami Athari Zahid, a Muslim and passionate web developer from Indonesia. Specializing in PHP, Laravel, and Next.js, I build functional, visually stunning web applications. As captain of my school’s basketball team, I bring teamwork and discipline to every project.
           </p>
 
           {/* Tabs: Skills, Education, Certifications */}

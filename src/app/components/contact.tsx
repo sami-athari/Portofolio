@@ -45,9 +45,9 @@ const EmailSection = () => {
       viewport={{ once: false, amount: 0.2 }} // Trigger animation when 20% of the section is in view
     >
       <motion.div className="flex flex-col justify-center items-start text-white pl-5" variants={sectionVariants}>
-        <h5 className="text-xl font-bold mb-4">Let`s Connect</h5>
+        <h5 className="text-xl font-bold mb-4">Let&apos;s Connect</h5>
         <p className="text-[#ADB7BE] mb-6 max-w-md">
-          I&apos;m currently looking for new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
+        I&apos;m open to new opportunities! Whether you have a question or just want to say hello, I&apos;ll do my best to respond promptly.
         </p>
       </motion.div>
       <motion.div

@@ -42,7 +42,7 @@ export default function Navbar() {
       </div>
 
       {/* Navbar Links (visible on desktop, hidden on mobile) */}
-      <div className="hidden md:flex space-x-12">
+      <div className="hidden md:flex space-x-12 font-bold">
         {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
           <Link
             key={item}

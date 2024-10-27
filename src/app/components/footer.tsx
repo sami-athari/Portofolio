@@ -1,13 +1,13 @@
 'use client';
-
-import { FaYoutube, FaGithub, FaInstagram, FaShareAlt } from 'react-icons/fa';
+import { PiShareFatFill } from "react-icons/pi";
+import { FaYoutube, FaGithub, FaInstagram} from 'react-icons/fa';
 
 const Footer = () => {
   const sharePortfolio = () => {
     const shareData = {
-      title: 'Check out my Portfolio',
-      text: 'Hi! I wanted to share my portfolio with you. Take a look at my work!',
-      url: 'https://your-portfolio-link.com', // Replace with your actual portfolio URL
+      title: 'Explore Sami&apos;s Portfolio!',
+      text: 'Hi! Take a moment to check out Sami&apos;s portfolio and discover his latest work!',
+      url: 'https://portofolio-psi-umber.vercel.app/', // Replace with your actual portfolio URL
     };
 
     try {
@@ -53,9 +53,9 @@ const Footer = () => {
             <button
               onClick={sharePortfolio}
               aria-label="Share Portfolio"
-              className="hover:text-zinc-500 transition flex items-center"
+              className="hover:text-zinc-400 transition flex items-center "
             >
-              <FaShareAlt className="mr-2" />
+              <PiShareFatFill className="mr-2" />
               Share
             </button>
           </div>
