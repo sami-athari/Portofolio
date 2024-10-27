@@ -5,8 +5,8 @@ import { FaYoutube, FaGithub, FaInstagram} from 'react-icons/fa';
 const Footer = () => {
   const sharePortfolio = () => {
     const shareData = {
-      title: 'Explore Sami&apos;s Portfolio!',
-      text: 'Hi! Take a moment to check out Sami&apos;s portfolio and discover his latest work!',
+      title: 'Explore Sami’s Portfolio!',
+      text: 'Hi! Take a moment to check out Sami’s portfolio and discover his latest work!',
       url: 'https://portofolio-psi-umber.vercel.app/', // Replace with your actual portfolio URL
     };
 
